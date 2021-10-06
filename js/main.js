@@ -10,30 +10,28 @@ let sum = 0;
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
-console.log(' Mi número aleatorio es: ' + numberToGuess);
-
 
 function handleUserChoice() {
 
   const inputValue = parseInt(userInput.value);
 
   if (inputValue > numberToGuess && inputValue <= 100) {
-    userAttempt.value = 'Demasiado Alto.'
+    userAttempt.innerHTML = 'Hint: Number is too high.'
   } else if (inputValue < numberToGuess && inputValue >= 1) {
-    userAttempt.value = 'Demasiado bajo.'
+    userAttempt.innerHTML = 'Hint: Number is too Low.'
   } else if (inputValue === numberToGuess) {
-    userAttempt.value = 'Has ganado Campeona!!!'
+    userAttempt.innerHTML = 'Hint: You win!'
   } else if (isNaN(inputValue) === true && inputValue == userInput.value) {
-    userAttempt.value = 'El número debe estar entre 1 y 100.'
+    userAttempt.innerHTML = 'Hint: The number must be between 1 and 100.'
   } else {
-    userAttempt.value = 'El número debe estar entre 1 y 100.'
+    userAttempt.innerHTML = 'Hint: The number must be between 1 and 100.'
   }
 
 }
 
 function calcClicks() {
   sum++;
-  numAttempt.value = `Número de intentos: ${sum} `
+  numAttempt.innerHTML = ` Attempt Nº: ${sum} `
 }
 
 function handleAllFunctions(e) {
