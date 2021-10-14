@@ -11,6 +11,8 @@ function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
+console.log(numberToGuess)
+
 function handleUserChoice() {
 
   const inputValue = parseInt(userInput.value);
